@@ -1,0 +1,31 @@
+apiVersion: akri.sh/v0
+kind: Configuration
+metadata:
+  name: udev-camera
+  namespace: default 
+spec:
+  brokerProperties: {}
+  brokerSpec:
+    brokerPodSpec:
+      containers:
+      - image: linuxserver/ffmpeg
+        name: ffmpeg-camera
+        imagePullPolicy: IfNotPresent
+        command: ['bash']
+        args: ['-c','ffmpeg -loglevel debug -i /dev/video0 -f v4l2 -pix_fmt mjpeg -f rtsp -rtsp_transport tcp rtsp://192.168.124.45:31559/rps']
+        securityContext:
+          privileged: true
+  capacity: 1
+  configurationServiceSpec:
+    ports:
+    - name: rtsp
+      nodePort: 30554
+      port: 8554
+      protocol: UDP
+      targetPort: 8554
+    type: NodePort  
+  discoveryHandler:
+    discoveryDetails: |
+      udevRules:
+      - KERNEL=="video0"
+    name: udev

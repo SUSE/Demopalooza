@@ -1,0 +1,35 @@
+apiVersion: akri.sh/v0
+kind: Configuration
+metadata:
+  name: udev-camera
+  namespace: default 
+spec:
+  brokerProperties: {}
+  brokerSpec:
+    brokerPodSpec:
+      containers:
+      - image: restreamio/gstreamer:aarch64-latest-prod
+        name: rtspserver
+        imagePullPolicy: IfNotPresent
+        command: ['bash']
+        args: ['-c','gst-launch-1.0 -v v4l2src device=/dev/video0 ! queue ! rtspclientsink location=rtsp://192.168.124.45:31559/rps']
+        securityContext:
+          privileged: true
+  capacity: 1
+  configurationServiceSpec:
+    ports:
+    - name: rtsp
+      nodePort: 30554
+      port: 8554
+      protocol: TCP
+      targetPort: 8554
+    - name: http
+      port: 8081
+      protocol: TCP
+      targetPort: 8081
+    type: NodePort  
+  discoveryHandler:
+    discoveryDetails: |
+      udevRules:
+      - KERNEL=="video0"
+    name: udev
