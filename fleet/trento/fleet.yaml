@@ -5,14 +5,10 @@ metadata:
   namespace: fleet-default
 spec:
   repo: https://github.com/trento-project/helm-charts
+  branch: main
   paths:
   - charts/trento-server
   helm:
     releaseName: trento
     values:
       key: value
-  targets:
-  - name: dev-cluster
-    clusterSelector:
-      matchLabels:
-        env: dev
