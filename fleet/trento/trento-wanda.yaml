@@ -1,0 +1,8 @@
+defaultNamespace: trento
+dependsOn:
+  - name: trento-postgres
+helm: 
+  repo: https://github.com/trento-project/helm-charts
+  chart: trento-wanda
+  releaseName: trento-wanda
+  
