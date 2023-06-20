@@ -298,7 +298,7 @@ data:
         #runOnInit: ffmpeg -f v4l2 -i /dev/video0 -pix_fmt yuv420p -preset ultrafast -b:v 600k -f rtsp rtsp://localhost:$RTSP_PORT/$RTSP_PATH
         #runOnInitRestart: yes
       rps:
-        source: rtsp://192.168.124.187:30554 
+        source: rtsp://192.168.0.227:30554
       
     # Source of the stream. This can be:
     # * publisher -> the stream is published by a RTSP or RTMP client
