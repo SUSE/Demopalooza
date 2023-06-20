@@ -1,0 +1,5 @@
+defaultNamespace: neuvector
+helm:
+  chart: crd
+  repo: https://neuvector.github.io/neuvector-helm/
+  releaseName: neuvector-crd
