@@ -10,7 +10,7 @@ spec:
         - name: display
           env:
             - name: URL
-              value: http://diablo.seader.us
+              value: http://192.168.0.100/index01.html
             - name: DISPLAY
               value: ':0'
           image: registry.opensuse.org/home/atgracey/wallboardos/15.4/firefox:latest
