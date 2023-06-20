@@ -6,8 +6,8 @@ dependsOn:
 helm: 
   repo: https://github.com/trento-project/helm-charts
   paths: 
-  - charts/trento-server
-  chart: trento-server
+  - charts/trento-web
+  chart: trento-web
   releaseName: trento-web
   values:
     trento-web:
