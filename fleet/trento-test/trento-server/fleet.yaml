@@ -5,7 +5,3 @@ helm:
   - /charts/trento-server
   chart: trento-server
   releaseName: trento-server
-  values:
-    trento-web:
-      adminUser:
-        password: SomePassword
