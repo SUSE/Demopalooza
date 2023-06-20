@@ -3,6 +3,8 @@ dependsOn:
   - name: trento-postgres
 helm: 
   repo: https://github.com/trento-project/helm-charts
+  paths:
+   - charts/trento-wanda
   chart: trento-wanda
   releaseName: trento-wanda
   
