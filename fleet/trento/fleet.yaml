@@ -1,12 +1,12 @@
-apiVersion: fleet.cattle.io/v1alpha1
-kind: GitRepo
-metadata:
-  name: trento
-  namespace: fleet-default
-spec:
+defaultNamespace: trento
+dependsOn:
+  - name: trento-postgres
+  - name: trento-wanda
+helm: 
   repo: https://github.com/trento-project/helm-charts
-  branch: main
-  paths:
-  - charts/trento-server
-  helm:
-    releaseName: trento
+  chart: trento-server
+  releaseName: trento-web
+  values:
+    trento-web:
+      adminUser:
+        password: SomePassword
