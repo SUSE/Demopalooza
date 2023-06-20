@@ -1,0 +1,11 @@
+defaultNamespace: trento
+helm: 
+  repo: https://github.com/trento-project/helm-charts
+  paths: 
+  - /charts/trento-server
+  chart: trento-server
+  releaseName: trento-server
+  values:
+    trento-web:
+      adminUser:
+        password: SomePassword
