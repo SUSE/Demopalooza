@@ -1,0 +1,5 @@
+defaultNamespace: trento
+helm: 
+  repo: https://github.com/trento-project/helm-charts
+  chart: trento-postgres
+  releaseName: trento-postgres
