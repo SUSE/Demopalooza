@@ -357,7 +357,7 @@ data:
     ###############################################
     # RTSP path parameters (when source is a RTSP or a RTSPS URL)
     # protocol used to pull the stream. available values are "automatic", "udp", "multicast", "tcp".
-    sourceProtocol: automatic
+    #sourceProtocol: automatic
     # support sources that don't provide server ports or use random server ports. This is a security issue
     # and must be used only when interacting with sources that require it.
     #sourceAnyPortEnable: no
