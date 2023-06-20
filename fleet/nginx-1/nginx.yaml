@@ -17,7 +17,7 @@ spec:
     spec:
       containers:  
       - name: nginx-1
-        image: nginx
+        image: nginx:latest
         imagePullPolicy: IfNotPresent
         resources:
           limits:
@@ -29,7 +29,7 @@ spec:
         securityContext:
           privileged: true
         volumeMounts:
-          - mountPath: /index1.html
+          - mountPath: /usr/share/nginx/html/index1.html
             name: nginx-vol
             subPath: index1.html
       volumes:
@@ -39,7 +39,7 @@ spec:
             items:
               - key: index1.html
                 path: index1.html
-          name: index1-vol
+          name: nginx-vol
 
 
 ---
@@ -120,7 +120,7 @@ data:
   </script>
 
   <div id="image-container">
-    <img src="your-image.jpg" alt="Maximized Image">
+    <img src="data:image/jpeg;base64,<base64-encoded-image-data>" alt="Embedded Image">
   </div>
 </body>
 </html>
