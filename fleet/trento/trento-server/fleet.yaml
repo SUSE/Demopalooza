@@ -1,8 +1,5 @@
-kind: GitRepo
-apiVersion: fleet.cattle.io/v1alpha1
-metadata:
-  name: trento  
-  defaultNamespace: trento
+ 
+defaultNamespace: trento
 dependsOn:
   - name: trento-postgres
   - name: trento-wanda
