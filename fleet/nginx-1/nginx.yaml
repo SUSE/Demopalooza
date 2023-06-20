@@ -68,6 +68,14 @@ data:
 <html>
 <head>
   <meta charset="UTF-8">
+  <title>Timestamp</title>
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="refresh" content="5">
   <title>Maximized Image</title>
   <style>
     html, body {
@@ -91,6 +99,26 @@ data:
   </style>
 </head>
 <body>
+  <p id="timestamp" class="hidden"></p>
+
+  <script>
+    // Generate timestamp
+    function generateTimestamp() {
+      var date = new Date();
+      return date.toISOString();
+    }
+
+    // Display timestamp in the hidden element
+    function displayTimestamp() {
+      var timestampElement = document.getElementById("timestamp");
+      timestampElement.textContent = generateTimestamp();
+      timestampElement.classList.remove("hidden");
+    }
+
+    // Call the displayTimestamp function
+    displayTimestamp();
+  </script>
+
   <div id="image-container">
     <img src="your-image.jpg" alt="Maximized Image">
   </div>
