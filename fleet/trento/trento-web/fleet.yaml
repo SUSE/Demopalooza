@@ -1,12 +1,12 @@
  
 defaultNamespace: trento
 dependsOn:
-  - name: trento-postgres
+  - name: postgresql
   - name: trento-wanda
 helm: 
   repo: https://github.com/trento-project/helm-charts
   paths: 
-  - charts/trento-web
+  - /charts/trento-server/charts/trento-web
   chart: trento-web
   releaseName: trento-web
   values:
