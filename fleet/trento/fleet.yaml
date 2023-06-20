@@ -3,7 +3,7 @@ dependsOn:
   - name: trento-postgres
   - name: trento-wanda
 helm: 
-  repo: https://github.com/trento-project/helm-charts
+  repo: https://github.com/trento-project/helm-charts/charts/trento-server
   chart: trento-server
   releaseName: trento-web
   values:
