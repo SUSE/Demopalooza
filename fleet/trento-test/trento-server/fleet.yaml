@@ -7,3 +7,6 @@ helm:
     trento-web:
       adminUser:
         password: ADMIN_PASSWORD
+    rabbitmq:
+      auth:
+        erlangCookie: cookie
