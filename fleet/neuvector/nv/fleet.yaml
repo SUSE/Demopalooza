@@ -1,6 +1,6 @@
 defaultNamespace: neuvector
 dependsOn: 
- - name: neuvector-crd
+ - name: neuvector-fleet-neuvector-nv-crd
 helm:
   chart: core
   repo: https://neuvector.github.io/neuvector-helm/
